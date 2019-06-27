@@ -26,12 +26,36 @@ def host():
     host = socket.gethostname()
     x = host.split('-')
     print(x[0])
+    
+    
+def download():
+    arquivo = input('Nome do arquivo: ')
+    fonte = (f'C:\\Users\CTRC2-M\Documents\server\\{arquivo}')
+    usuario = input('Nome do usuario: ')
+    if usuario in usuarios:
+        destino = (f'C:\\Users\CTRC2-M\Documents\\{usuario}')
+        shutil.copy(fonte, destino)
+    else:
+        print('Usuário não cadastrado.')
+
+def uplaod():
+    arquivo = input('Nome do arquivo: ')
+    usuario = input('Nome do usuário que irá fazer o uplaod:')
+    if usuario in usuarios:
+        fonte = (f'C:\\Users\CTRC2-M\Documents\\{usuario}\\{arquivo}')
+        destino = input('Destino: ')
+        shutil.copy(fonte, destino)
+    else:
+        print('Usuário não cadastrado.')
+    
 
 while True:
     print('''
 1-cadastrar
 2-login
-3-nome do host    
+3-nome do host
+4-download do servidor
+5-enviar arquivo para o servidor
     ''')
     op = int(input('opção: '))
     if op == 1:
@@ -40,5 +64,9 @@ while True:
         login()
     elif op == 3:
         host()
+    elif op == 4:
+        dowload()
+    elif op == 5:
+        upload()
     else:
         print('Opção inválida.')
