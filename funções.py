@@ -1,5 +1,6 @@
 import os
 import socket
+import shutil
 usuarios = {'phablo': ['123'], 'cristian': ['123']}
 
 
@@ -38,7 +39,7 @@ def download():
     else:
         print('Usuário não cadastrado.')
 
-def uplaod():
+def upload():
     arquivo = input('Nome do arquivo: ')
     usuario = input('Nome do usuário que irá fazer o uplaod:')
     if usuario in usuarios:
@@ -65,7 +66,7 @@ while True:
     elif op == 3:
         host()
     elif op == 4:
-        dowload()
+        download()
     elif op == 5:
         upload()
     else:
