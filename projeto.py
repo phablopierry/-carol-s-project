@@ -9,7 +9,7 @@ def add_user():
     if usuario not in usuarios:
         senha = input('senha: ')
         usuarios[usuario] = [senha]
-        os.mkdir(f'/home/cristian/Música/{usuario}')
+        os.mkdir(f'C:\\Users\CTRC2-M\Documents\server\\{usuario}')
     else:
         print('Nome de usuário indisponível.')
 
@@ -24,9 +24,9 @@ def login():
 
 
 def host():
-    host = socket.gethostname()
-    x = host.split('-')
-    print(x[0])
+    x = socket.gethostname()
+    host = x.split('-')
+    print(host[0])
     
     
 def download():
