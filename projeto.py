@@ -1,23 +1,23 @@
 import os
 import socket
 import shutil
-usuarios = {'phablo': ['123'], 'cristian': ['123']}
+users = {'phablo': ['123'], 'cristian': ['123']}
 
 
 def add_user():
-    usuario = input('usuário: ')
-    if usuario not in usuarios:
-        senha = input('senha: ')
-        usuarios[usuario] = [senha]
-        os.mkdir(f'C:\\Users\CTRC2-M\Documents\server\\{usuario}')
+    user = input('usuário: ')
+    if user not in users:
+        password = input('senha: ')
+        users[user] = [password]
+        os.mkdir(f'C:\\Users\CTRC2-M\Documents\server\\{user}')
     else:
         print('Nome de usuário indisponível.')
 
 
 def login():
     login = input('login: ')
-    senha = input('senha: ')
-    if login in usuarios and senha == usuarios[login][0]:
+    password = input('senha: ')
+    if login in users and password == users[login][0]:
         print('Usuário logado com sucesso.')
     else:
         print('Usuário ou senha inexistente. Tente novamente.')
@@ -30,23 +30,23 @@ def host():
     
     
 def download():
-    arquivo = input('Nome do arquivo: ')
-    fonte = (f'C:\\Users\CTRC2-M\Documents\server\\{arquivo}')
-    usuario = input('Nome do usuario: ')
-    if usuario in usuarios:
-        destino = (f'C:\\Users\CTRC2-M\Documents\\{usuario}')
-        shutil.copy(fonte, destino)
+    file_name = input('Nome do arquivo: ')
+    source = (f'C:\\Users\CTRC2-M\Documents\server\\{file_name}')
+    user = input('Nome do usuario: ')
+    if user in users:
+        destination = (f'C:\\Users\CTRC2-M\Documents\\{user}')
+        shutil.copy(source, destination)
     else:
         print('Usuário não cadastrado.')
 
 
 def upload():
-    arquivo = input('Nome do arquivo: ')
-    usuario = input('Nome do usuário que irá fazer o uplaod:')
-    if usuario in usuarios:
-        fonte = (f'C:\\Users\CTRC2-M\Documents\\{usuario}\\{arquivo}')
-        destino = input('Destino: ')
-        shutil.copy(fonte, destino)
+    file_name = input('Nome do arquivo: ')
+    user = input('Nome do usuário que irá fazer o uplaod: ')
+    if user in users:
+        source = (f'C:\\Users\CTRC2-M\Documents\\{user}\\{file_name}')
+        destination = input('Destino: ')
+        shutil.copy(source, destination)
     else:
         print('Usuário não cadastrado.')
     
