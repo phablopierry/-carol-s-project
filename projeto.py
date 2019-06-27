@@ -4,7 +4,7 @@ import shutil
 usuarios = {'phablo': ['123'], 'cristian': ['123']}
 
 
-def cadastrar_usuario():
+def add_user():
     usuario = input('usuário: ')
     if usuario not in usuarios:
         senha = input('senha: ')
@@ -39,6 +39,7 @@ def download():
     else:
         print('Usuário não cadastrado.')
 
+
 def upload():
     arquivo = input('Nome do arquivo: ')
     usuario = input('Nome do usuário que irá fazer o uplaod:')
@@ -52,22 +53,19 @@ def upload():
 
 while True:
     print('''
-1-cadastrar
-2-login
-3-nome do host
-4-download do servidor
-5-enviar arquivo para o servidor
+1-Cadastrar usuário
+2-Login
+3-Download de arquivos da nuvem
+4-Enviar arquivo para a nuvem
     ''')
     op = int(input('opção: '))
     if op == 1:
-        cadastrar_usuario()
+        add_user()
     elif op == 2:
         login()
     elif op == 3:
-        host()
-    elif op == 4:
         download()
-    elif op == 5:
+    elif op == 4:
         upload()
     else:
         print('Opção inválida.')
