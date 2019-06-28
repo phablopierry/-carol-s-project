@@ -49,6 +49,13 @@ def upload():
         shutil.copy(source, destination)
     else:
         print('Usuário não cadastrado.')
+
+        
+def listing():
+    user = input('Usuário: ')
+    files = os.listdir(f'C:\\Users\CTRC2-M\Documents\server\\{user}')
+    for i in files:
+        print(i)
     
 
 while True:
