@@ -45,7 +45,7 @@ def upload():
     user = input('Nome do usuário que irá fazer o uplaod: ')
     if user in users:
         source = (f'C:\\Users\CTRC2-M\Documents\\{user}\\{file_name}')
-        destination = input('Destino: ')
+        destination = (f'C:\\Users\CTRC2-M\Documents\server')
         shutil.copy(source, destination)
     else:
         print('Usuário não cadastrado.')
